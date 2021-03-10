@@ -1,0 +1,55 @@
+{
+  "name": "yftopproducts",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@adobe/aio-sdk": "^2.3.0",
+    "@adobe/exc-app": "^0.2.17",
+    "@adobe/fetch": "^0.3.3",
+    "axios": "^0.21.0",
+    "cloudevents-sdk": "^1.0.0",
+    "crypto": "^1.0.1",
+    "http-server": "^0.12.3",
+    "jsonwebtoken": "^8.5.1",
+    "jsrsasign": "^10.1.0",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.0",
+    "regenerator-runtime": "^0.13.5",
+    "sirv-cli": "^1.0.0",
+    "svelte-i18n": "^3.0.4",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "@openwhisk/wskdebug": "^1.3.0",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-typescript": "^6.1.0",
+    "@tsconfig/svelte": "^1.0.10",
+    "autoprefixer": "^9.8.6",
+    "jest": "^24.9.0",
+    "postcss": "8.1.10",
+    "rollup": "^2.3.4",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "~6.1.1",
+    "rollup-plugin-terser": "^7.0.0",
+    "sass": "^1.26.10",
+    "svelte": "^3.24.0",
+    "svelte-check": "^1.0.27",
+    "svelte-preprocess": "^4.6.0",
+    "tailwindcss": "2.0.1",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "test": "jest --passWithNoTests ./test",
+    "e2e": "jest --collectCoverage=false --testRegex ./e2e",
+    "post-app-build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv ../public/minicart",
+    "validate": "svelte-check"
+  },
+  "engines": {
+    "node": "^10 || ^12"
+  }
+}

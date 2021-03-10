@@ -1,0 +1,26 @@
+[
+    {
+       "id":4,
+       "thumbnail":"https://static2.o9.de/resource/blob/531388/795e6ee781c356475791dfab43bb0a4b/article-item-4510-300600-00-imagesmall-picture-data.png",
+       "name":"Product 4",
+       "price":"699"
+    },
+    {
+       "id":3,
+       "thumbnail":"https://static2.o9.de/resource/blob/531388/795e6ee781c356475791dfab43bb0a4b/article-item-4510-300600-00-imagesmall-picture-data.png",
+       "name":"Product 3",
+       "price":"599"
+    },
+    {
+       "id":2,
+       "thumbnail":"https://static2.o9.de/resource/blob/531388/795e6ee781c356475791dfab43bb0a4b/article-item-4510-300600-00-imagesmall-picture-data.png",
+       "name":"Product 2",
+       "price":"129"
+    },
+    {
+       "id":1,
+       "thumbnail":"https://static2.o9.de/resource/blob/531388/795e6ee781c356475791dfab43bb0a4b/article-item-4510-300600-00-imagesmall-picture-data.png",
+       "name":"Product 1",
+       "price":"99"
+    }
+]

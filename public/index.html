@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Demo</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+    <body>
+        <header>
+            <div class="container mx-auto px-6 py-3 bg-purple-700 mb-8">
+                <div class="flex items-center justify-between">
+                    <div class="w-full md:text-center text-2xl font-semibold text-white">
+                        MicroFrontend Demo
+                    </div>
+                    <div class="flex items-center justify-end w-full">
+                        <script defer src='./minicart/index.js'></script>
+                        <cmp-mini-cart lang="en"></cmp-mini-cart>
+                    </div>
+                </div>
+                <div class="relative mt-6 max-w-lg mx-auto">
+                    <div id="search"></div>
+                </div>
+            </div>
+        </header>
+        
+        
+        <main class="flex mx-auto px-6 py-4">
+            <aside class="w-1/4 flex flex-col mr-4 align-middle">
+                <button class="bg-purple-700 text-white py-2 px-1 mb-8 flex-grow-0" onClick="loadSearchBar()">Load Searchbar</button>
+                <button class="bg-purple-700 text-white py-2 px-1" onClick="loadFooter()">Load Footer</button>
+            </aside>
+            <section class="w-3/4">
+                <script defer src='products/index.js'></script>
+                <top-products-spa lang="en"></top-products-spa>
+            </section>
+        </main>
+        <div id="footer"></div>
+        <script>
+            document.querySelector('top-products-spa').addEventListener('product:view', (e) => {
+                window.addToCart(e.detail);
+            });
+        </script>
+
+        <script type="text/javascript">
+            function loadRemoteEntryFile(cb) {
+                var script = document.createElement('script')
+                script.onload = function () {
+                    cb()
+                }
+                script.src = 'http://localhost:8080/remoteEntry.js'
+                window.document.body.appendChild(script)
+            }
+            function loadSearchBar() {
+                if (window.app.get) {
+                    window.app.get("./Search").then((module) => {
+                        const Search = module().default;
+                        new Search({
+                            target: document.getElementById("search"),
+                        });
+                    });
+                } else {
+                    loadRemoteEntryFile(() => {
+                        window.app.get("./Search").then((module) => {
+                            const Search = module().default;
+                            new Search({
+                                target: document.getElementById("search"),
+                            });
+                        });
+                    })
+                }
+            }
+
+            function loadFooter() {
+                if (window.app.get) {
+                    window.app.get("./Footer").then((module) => {
+                        const Footer = module().default;
+                        new Footer({
+                            target: document.getElementById("footer"),
+                        });
+                    });
+                } else {
+                    loadRemoteEntryFile(() => {
+                        window.app.get("./Footer").then((module) => {
+                            const Footer = module().default;
+                            new Footer({
+                                target: document.getElementById("footer"),
+                            });
+                        });
+                    })
+                }
+            }
+        </script>
+
+    </body>
+</html>

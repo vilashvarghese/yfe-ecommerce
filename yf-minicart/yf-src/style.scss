@@ -1,0 +1,11 @@
+/* only apply purgecss on utilities, per Tailwind docs */
+/* purgecss start ignore */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+/* purgecss end ignore */
+
+@import "tailwindcss/utilities";
+
+.hidden {
+    display: none;
+}
